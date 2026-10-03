@@ -9,7 +9,10 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="선릉역 가족호텔 공동투자 안내">
 <meta property="og:description" content="1구좌 2억원 · 1차 연 18% 고정 배당(월 300만원) · 1차 10월 8일, 2차 10월 22일 마감">
-<meta property="og:image" content="img/building.jpg">
+<meta property="og:url" content="https://kimdoosoo.github.io/seolleung-hotel/">
+<meta property="og:image" content="https://kimdoosoo.github.io/seolleung-hotel/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <style>html,body{margin:0}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 
 <style>
@@ -78,7 +81,7 @@ h3 { font-size: 20px; line-height: 1.35; font-weight: 700; }
 .kv dt { color: var(--accent); font-weight: 600; }
 
 .two { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 40px; align-items: start; }
-.photo img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; border-radius: 12px; }
+.photo img { width: 100%; aspect-ratio: 928 / 1290; object-fit: cover; border-radius: 12px; }
 
 /* money boxes */
 .sum { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); gap: 14px; align-items: stretch; margin-bottom: 32px; }
@@ -214,7 +217,8 @@ footer p + p { margin-top: 6px; }
 .trio.quad { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .trio .big { font-size: clamp(24px, 2.6vw, 32px); }
 .flow .v { font-size: clamp(22px, 2.4vw, 30px); }
-.cmp { min-width: 600px; }
+.cmp { min-width: 0; }
+#stocks .cmp { min-width: 600px; }
 @media (max-width: 760px) {
   .legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .legend.three { grid-template-columns: minmax(0, 1fr); }
@@ -248,12 +252,44 @@ footer p + p { margin-top: 6px; }
   .mbar .btn { flex: 1; }
   footer { padding-bottom: 96px; }
 }
+/* 1차 vs 2차 */
+.urge { margin-top: 18px; font-size: 16px; color: var(--sub); }
+.urge b { color: var(--accent); }
+.duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.card { border: 1.5px solid var(--line); border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 6px; }
+.card.on { border: 2px solid var(--accent); }
+.card .tag { font-size: 14px; font-weight: 700; color: var(--sub); }
+.card.on .tag, .card.on .rate { color: var(--accent); }
+.card .rate { font-size: clamp(40px, 7vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -.02em; color: var(--sub); }
+.card .m { font-weight: 600; }
+.card dl { display: grid; grid-template-columns: minmax(0, 1fr) auto; margin-top: 10px; }
+.card dt, .card dd { padding: 10px 0; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.card dt { font-size: 14px; color: var(--sub); }
+.card dd { font-weight: 700; text-align: right; }
+.card.on dd { color: var(--accent); }
+.diff { font-size: clamp(24px, 3.6vw, 36px); font-weight: 800; color: var(--accent); margin-top: 26px; line-height: 1.25; }
+/* 운영 관리 */
+.part + .part { margin-top: 48px; }
+.part > p { margin-top: 8px; color: var(--sub); }
+.shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; max-width: 760px; }
+.shots figure { display: flex; flex-direction: column; gap: 8px; }
+.shots img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; object-position: top; border: 1px solid var(--line); border-radius: 8px; }
+.shots figcaption { font-size: 13px; color: var(--sub); }
+.care { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px; align-items: start; margin-top: 18px; }
+.care img { width: 100%; border-radius: 10px; }
+.care figcaption { font-size: 13px; color: var(--sub); margin-top: 8px; }
+.steps { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.steps li { display: grid; grid-template-columns: 2.4em minmax(0, 1fr); gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.steps .no { font-weight: 800; color: var(--accent); }
+.steps b { display: block; }
+.steps span { font-size: 14px; color: var(--sub); }
+@media (max-width: 760px) {
+  .duo, .care { grid-template-columns: minmax(0, 1fr); }
+}
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 </style>
 </head>
 <body>
-
-
 <header class="top">
   <div class="wrap">
     <span class="brand">주식회사 고수플러스 · 먼슬리브</span>
@@ -265,20 +301,35 @@ footer p + p { margin-top: 6px; }
   <div class="wrap hero">
     <p class="eyebrow">seolleung family hotel · co-investment</p>
     <h1>선릉역 가족호텔<br>공동투자 안내</h1>
-    <p class="addr">서울 강남구 선릉로89길 13 · 지상 2~8층 · 객실 36실 · 2027년 3월 오픈 예정</p>
-    <p class="deadline">1차 모집 마감 <b>2026년 10월 8일(목)</b></p>
+    <p class="addr">서울 강남구 선릉로89길 13 · 지상 2~8층 · 객실 36실 예정 · 2027년 3월 오픈 예정</p>
+    <p class="deadline">1차 모집 마감 <b>2026년 10월 8일(목)</b><span id="dday"></span></p>
     <div class="stats">
       <div class="stat"><p class="k">1구좌</p><p class="v">2억원</p></div>
       <div class="stat"><p class="k">모집</p><p class="v">10구좌</p></div>
       <div class="stat"><p class="k">1차 배당</p><p class="v">연 18% 고정</p></div>
       <div class="stat"><p class="k">1차 1구좌 월 배당</p><p class="v">300만원</p></div>
     </div>
-    <p class="subtle" style="margin-top:14px">2차 모집은 10월 22일(목) 마감 · 연 16% 고정(1구좌 월 약 267만원) · 추가 배당은 1차 · 2차 동일</p>
+    <p class="urge"><b>10월 8일(목) 1차 마감</b> 뒤에는 고정 배당이 연 16%로 내려갑니다 · 10구좌 한정</p>
     <div class="cta">
       <a class="btn" href="#apply">상담 신청하기</a>
-      <a class="btn ghost" href="#returns">언제 얼마를 받나요</a>
+      <a class="btn ghost" href="#first">1차와 2차 차이</a>
     </div>
   </div>
+
+  <section class="block" id="first">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">1차 모집 · 10월 8일(목) 마감</p><hr><h2>10월 8일이 지나면 고정 배당이 연 18%에서 16%로 내려갑니다</h2></div>
+      <div class="duo">
+        <div class="card on"><p class="tag">1차 · 10월 8일(목) 마감</p><p class="rate">연 18%</p><p class="m">1구좌 매달 300만원</p>
+          <dl><dt>고정 배당 49개월</dt><dd>1억 4,700만원</dd><dt>1구좌 받는 돈 합계 (예상)</dt><dd>약 3억 9,700만원</dd></dl></div>
+        <div class="card"><p class="tag">2차 · 10월 22일(목) 마감</p><p class="rate">연 16%</p><p class="m">1구좌 매달 약 267만원</p>
+          <dl><dt>고정 배당 49개월</dt><dd>1억 3,067만원</dd><dt>1구좌 받는 돈 합계 (예상)</dt><dd>약 3억 8,070만원</dd></dl></div>
+      </div>
+      <p class="diff">같은 2억원, 1차가 1,633만원 더</p>
+      <p class="subtle" style="margin-top:6px">10구좌 한정 · 1차에서 다 차면 2차 모집은 없습니다</p>
+      <p class="note">배당 49개월 = 2027년 5월 ~ 2031년 5월 (예상 시나리오) · 합계 = 고정 배당 + 추가 배당(예상) + 엑시트 실수령 · 모든 수익은 예상치입니다</p>
+    </div>
+  </section>
 
   <section class="block" id="property">
     <div class="wrap">
@@ -287,13 +338,13 @@ footer p + p { margin-top: 6px; }
         <dl class="kv">
           <dt>소재지</dt><dd>서울 강남구 선릉로89길 13 (역삼동 708-22)</dd>
           <dt>규모</dt><dd>지상 2~8층 7개 층 · 1,237.95㎡ (약 374평)</dd>
-          <dt>사업</dt><dd>가족호텔 (관광숙박업) · 객실 36실</dd>
+          <dt>사업</dt><dd>가족호텔 (관광숙박업) · 객실 36실 예정</dd>
           <dt>객실 구성</dt><dd>6개 층 × 6실 · 객실당 20㎡ 이상 · 1개 층은 공용 라운지</dd>
           <dt>임대 조건</dt><dd>보증금 3.5억원 · 월 3,990만원 (층당 570만원, 관리비 포함)</dd>
           <dt>계약</dt><dd>5년 · 렌트프리 3개월</dd>
           <dt>오픈</dt><dd>2027년 3월 예정</dd>
         </dl>
-        <figure class="photo"><img src="img/building.jpg" alt="역삼동 708-22 건물 외관" width="860" height="1042" loading="lazy"></figure>
+        <figure class="photo"><img src="img/building.jpg" alt="역삼동 708-22 건물 외관" width="928" height="1290" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -310,8 +361,8 @@ footer p + p { margin-top: 6px; }
       </div>
       <dl class="kv">
         <dt>배당</dt><dd>1차 연 18% (1구좌 월 300만원) · 2차 연 16% (월 약 267만원) — 매월 고정 지급</dd>
-        <dt>배당 시작</dt><dd>오픈 2개월차부터 (2027년 4월 예정)</dd>
-        <dt>추가 배당</dt><dd>고정 배당을 넘는 전년도 수익, 매년 1분기 지급 — 같은 지분이라 1차 · 2차 동일</dd>
+        <dt>배당 시작</dt><dd>오픈 2개월차부터 (2027년 5월 예정)</dd>
+        <dt>추가 배당</dt><dd>고정 배당을 넘는 전년도 수익, 매년 1분기 지급</dd>
         <dt>투자 방식</dt><dd>프로젝트 법인(SPC) 먼슬리브 역삼 호텔스테이 주주로 참여</dd>
         <dt>운영</dt><dd>고수플러스 위탁 운영 (매출의 15%)</dd>
         <dt>모집</dt><dd>1차 10월 8일(목) · 2차 10월 22일(목) 마감 · 투자금은 한 번에 납입</dd>
@@ -324,10 +375,10 @@ footer p + p { margin-top: 6px; }
       <div class="head"><p class="eyebrow">why family hotel</p><hr><h2>가족호텔은 객실마다 주방을 둘 수 있습니다</h2></div>
       <div class="tbl">
         <table class="cmp">
-          <tr><th></th><th>모텔 · 여관</th><th>호텔</th><th class="us">가족호텔</th></tr>
-          <tr><td>객실 취사</td><td>불가</td><td>대부분 없음</td><td class="us">객실마다 주방</td></tr>
-          <tr><td>오래 머물 때</td><td>끼니마다 외식</td><td>숙박비 · 외식비 부담</td><td class="us">장 보고 해 먹으며 몇 주 ~ 몇 달</td></tr>
-          <tr><td>여럿이 함께</td><td>어려움</td><td>방을 여러 개</td><td class="us">가족 · 친구가 한 객실에</td></tr>
+          <tr><th></th><th>모텔 · 여관 · 호텔</th><th class="us">가족호텔</th></tr>
+          <tr><td>객실 취사</td><td>없음</td><td class="us">객실마다 주방</td></tr>
+          <tr><td>오래 머물 때</td><td>끼니마다 외식</td><td class="us">장 보고 해 먹으며 몇 주 ~ 몇 달</td></tr>
+          <tr><td>여럿이 함께</td><td>방을 여러 개</td><td class="us">가족 · 친구가 한 객실에</td></tr>
         </table>
       </div>
       <h3 class="lead-h3">그래서 오래, 여럿이 머무는 손님이 찾습니다</h3>
@@ -342,18 +393,19 @@ footer p + p { margin-top: 6px; }
 
   <section class="block" id="location">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">location</p><hr><h2>선릉역에서 4정거장 안에 강남의 명소가 모여 있습니다</h2></div>
+      <div class="head"><p class="eyebrow">location</p><hr><h2>선릉역에서 환승 없이, 강남 명소와 성수까지</h2></div>
       <div class="map">
         <div>
-          <div class="map-scroll"><img src="img/map.jpg" alt="선릉역 주변 지도: 대상지에서 코엑스, 선정릉, 대치동 학원가, 강남역, 잠실종합운동장, 압구정로데오·청담, 롯데월드로 이어진 점선" width="2360" height="1200" loading="lazy"></div>
+          <div class="map-scroll"><img src="img/map.jpg" alt="선릉역 주변 지도: 대상지에서 코엑스, 선정릉, 대치동 학원가, 강남역, 잠실종합운동장, 압구정로데오·청담, 롯데월드, 성수로 이어진 점선" width="2360" height="1200" loading="lazy"></div>
           <p class="hint">지도는 옆으로 밀어 볼 수 있습니다</p>
         </div>
         <div class="stops">
-          <p class="subtle">선릉역 · 2호선 · 수인분당선</p>
+          <p class="subtle">2호선 · 수인분당선 · 환승 없이</p>
           <div><p class="n">1정거장</p><p>코엑스 · 선정릉 · 대치동 학원가</p></div>
           <div><p class="n">2정거장</p><p>강남역 · 잠실종합운동장</p></div>
           <div><p class="n">3정거장</p><p>압구정로데오 · 청담</p></div>
-          <div><p class="n">4정거장</p><p>롯데월드 · 잠실</p></div>
+          <div><p class="n">4정거장</p><p>롯데월드 · 잠실 · 서울숲</p></div>
+          <div><p class="n">9정거장</p><p>성수 (2호선)</p></div>
         </div>
       </div>
     </div>
@@ -386,41 +438,79 @@ footer p + p { margin-top: 6px; }
       <div class="head"><p class="eyebrow">monthliv track record</p><hr><h2>4개 지점 실적으로 본 역삼동 예상 매출, 월 1.65억원</h2></div>
       <div class="tbl">
         <table>
-          <tr><th>지점</th><th>면적</th><th>10월 매출</th><th>객단가</th><th>객실당 매출</th><th>점유율</th><th class="acc">80% 가동 시 매출</th><th class="acc">평당 매출</th></tr>
-          <tr><td>을지로</td><td>442.84㎡ (134평)</td><td>3,667만원</td><td>27.2만원</td><td>14.8만원</td><td>54.4%</td><td>5,388만원</td><td>40.2만원</td></tr>
-          <tr><td>을지로 광장시장</td><td>276.30㎡ (84평)</td><td>3,790만원</td><td>28.9만원</td><td>17.5만원</td><td>60.4%</td><td>5,023만원</td><td>60.1만원</td></tr>
-          <tr><td>종로 종각역</td><td>315.42㎡ (95평)</td><td>3,015만원</td><td>16.9만원</td><td>8.8만원</td><td>52.2%</td><td>4,620만원</td><td>48.4만원</td></tr>
-          <tr><td>명동충무로</td><td>857.28㎡ (259평)</td><td>3,043만원</td><td>24.5만원</td><td>5.9만원</td><td>24.1%</td><td>1억 111만원</td><td>39.0만원</td></tr>
-          <tr class="total"><td>4개 지점</td><td>1,891.84㎡ (572평)</td><td>1억 3,514만원</td><td>—</td><td>—</td><td>—</td><td>2억 5,142만원</td><td>43.9만원</td></tr>
-          <tr class="us"><td>역삼동 (예상)</td><td>1,237.95㎡ (374평)</td><td>—</td><td>—</td><td>—</td><td>80%</td><td>1억 6,452만원</td><td>43.9만원</td></tr>
+          <tr><th>지점</th><th class="acc">80% 가동 시 매출</th><th>면적</th><th>10월 매출</th><th>객단가</th><th>객실당 매출</th><th>점유율</th></tr>
+          <tr><td>을지로</td><td class="acc">5,388만원</td><td>442.84㎡ (134평)</td><td>3,667만원</td><td>27.2만원</td><td>14.8만원</td><td>54.4%</td></tr>
+          <tr><td>을지로 광장시장</td><td class="acc">5,023만원</td><td>276.30㎡ (84평)</td><td>3,790만원</td><td>28.9만원</td><td>17.5만원</td><td>60.4%</td></tr>
+          <tr><td>종로 종각역</td><td class="acc">4,620만원</td><td>315.42㎡ (95평)</td><td>3,015만원</td><td>16.9만원</td><td>8.8만원</td><td>52.2%</td></tr>
+          <tr><td>명동충무로</td><td class="acc">1억 111만원</td><td>857.28㎡ (259평)</td><td>3,043만원</td><td>24.5만원</td><td>5.9만원</td><td>24.1%</td></tr>
+          <tr class="total"><td>4개 지점</td><td>2억 5,142만원</td><td>1,891.84㎡ (572평)</td><td>1억 3,514만원</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr class="us"><td>역삼동 (예상)</td><td>1억 6,452만원</td><td>1,237.95㎡ (374평)</td><td>—</td><td>—</td><td>—</td><td>80%</td></tr>
         </table>
       </div>
-      <p class="note">매출은 OTA 수수료를 뺀 정산 매출 · 10월 매출 · 객단가 · 점유율은 2026.10.2 기준 · 80% 가동 시 매출 = 10월 매출 ÷ 점유율 × 80% · 4개 지점 평당 매출 = 80% 매출 합계 ÷ 면적 합계<br>역삼동 예상 매출 = 374.48평 × 평당 439,334원 (연 약 19.7억원) — 호스텔 실적을 가족호텔에 적용한 추정치입니다</p>
+      <p class="note">매출은 OTA 수수료를 뺀 정산 매출 · 10월 매출 · 객단가 · 점유율은 2026.10.2 기준 · 80% 가동 시 매출 = 10월 매출 ÷ 점유율 × 80%<br>역삼동 예상 매출 = 4개 지점 80% 매출 합계 ÷ 면적 합계(평당 43.9만원) × 374.48평 · 연 약 19.7억원 — 호스텔 실적을 가족호텔에 적용한 추정치입니다</p>
+    </div>
+  </section>
+
+  <section class="block" id="manage">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">management</p><hr><h2>현장에 오지 않아도, 공사부터 운영까지 다 보입니다</h2></div>
+      <div class="part">
+        <h3>공사 중 — 매일 단톡방</h3>
+        <p>공사가 시작되면 단톡방을 열어 공정 내용과 현장 사진을 매일 올립니다.</p>
+        <div class="shots">
+          <figure><img src="img/chat-sinchon.jpg" alt="신촌 지점 공사 단톡방 — 공정 사진 공유" width="509" height="924" loading="lazy"><figcaption>신촌 · 9.21</figcaption></figure>
+          <figure><img src="img/chat-yonggang.jpg" alt="용강동 지점 공사 단톡방 — 공정 보고" width="509" height="919" loading="lazy"><figcaption>용강동 · 9.15</figcaption></figure>
+          <figure><img src="img/chat-chungmuro.jpg" alt="충무로 호스텔 공사 단톡방 — 현장 사진 공유" width="509" height="848" loading="lazy"><figcaption>충무로 · 8.21</figcaption></figure>
+        </div>
+      </div>
+      <div class="part">
+        <h3>운영 중 — 실시간 판매 현황과 알림톡</h3>
+        <p>OTA에서 결제 · 판매되는 현황을 실시간으로 보고, 예약부터 결제 · 연장 · 정산까지 7단계 알림톡을 받습니다. 매년 초에는 지난해 실적을 보고드립니다.</p>
+        <div class="shots">
+          <figure><img src="img/alim-booking.jpg" alt="알림톡 — 예약 안내" width="415" height="544" loading="lazy"><figcaption>예약</figcaption></figure>
+          <figure><img src="img/alim-paid.jpg" alt="알림톡 — 결제 완료 안내" width="413" height="694" loading="lazy"><figcaption>결제 완료</figcaption></figure>
+          <figure><img src="img/alim-settle.jpg" alt="알림톡 — 정산 입금 안내" width="415" height="681" loading="lazy"><figcaption>정산 입금</figcaption></figure>
+        </div>
+      </div>
+      <div class="part">
+        <h3>민원 — 관제실이 받아, 담당에게 바로</h3>
+        <div class="care">
+          <figure><img src="img/control.jpg" alt="독립생활 관제실 — 모니터로 지점을 관제하는 상담사들" width="1280" height="853" loading="lazy"><figcaption>독립생활 관제실 — 24시간 민원 응대</figcaption></figure>
+          <ol class="steps">
+            <li><span class="no">01</span><div><b>호실 QR</b><span>기본 안내는 QR에서 먼저 확인합니다</span></div></li>
+            <li><span class="no">02</span><div><b>24시간 메신저</b><span>풀리지 않으면 언제든 문의합니다</span></div></li>
+            <li><span class="no">03</span><div><b>AI 자동응답 <em class="acc" style="font-style:normal">— 30.7% 바로 해결</em></b><span>AI가 응대한 상담 중 상담사 없이 끝난 비율</span></div></li>
+            <li><span class="no">04</span><div><b>상담사</b><span>AI로 풀리지 않는 일은 사람이 직접</span></div></li>
+            <li><span class="no">05</span><div><b>담당 배정</b><span>청소용역팀 · 관제실 자체 처리 · 현장운영매니저 출동</span></div></li>
+          </ol>
+        </div>
+      </div>
+      <p class="note">먼슬리브 다른 지점의 실제 화면입니다(2026년) · AI 자동응답 해결률 — 채널톡 통계 2026.08.01–09.30, AI 응대 1,134건 중 348건</p>
     </div>
   </section>
 
   <section class="block" id="profit">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">profit · 연간 예상</p><hr><h2>투자금 대비 연 40.2% — 18%는 매달, 초과분은 1분기에</h2></div>
-      <h3>연 매출 19억 7,425만원은 이렇게 나뉩니다</h3>
-      <div class="split" role="img" aria-label="연 매출 배분: 운영 수수료 15% 2억 9,614만원, 운영비 20% 3억 9,485만원, 임대료 4억 7,880만원, 고정 배당 3억 6,000만원, 추가 배당 4억 4,446만원">
-        <span style="flex:296;background:var(--c2)"></span><span style="flex:395;background:var(--c3)"></span><span style="flex:479;background:var(--c4)"></span><span style="flex:360;background:var(--accent)"></span><span style="flex:444;background:var(--accent-2)"></span>
+      <div class="head"><p class="eyebrow">profit · 연간 예상</p><hr><h2>투자금 대비 연 30% — 18%는 매달, 나머지는 1분기에</h2></div>
+      <h3>연 매출 19억 7,426만원은 이렇게 나뉩니다</h3>
+      <div class="split" role="img" aria-label="연 매출 배분: 운영 수수료 15% 2억 9,614만원, 운영비 5억 9,932만원, 임대료 4억 7,880만원, 고정 배당 3억 6,000만원, 추가 배당 2억 4,000만원">
+        <span style="flex:29614;background:var(--c2)"></span><span style="flex:59932;background:var(--c3)"></span><span style="flex:47880;background:var(--c4)"></span><span style="flex:36000;background:var(--accent)"></span><span style="flex:24000;background:var(--accent-2)"></span>
       </div>
       <div class="legend five">
         <div><i style="background:var(--c2)"></i><p>운영 수수료 15%</p><b>2억 9,614만</b></div>
-        <div><i style="background:var(--c3)"></i><p>운영비 20%</p><b>3억 9,485만</b></div>
+        <div><i style="background:var(--c3)"></i><p>운영비</p><b>5억 9,932만</b></div>
         <div><i style="background:var(--c4)"></i><p>임대료</p><b>4억 7,880만</b></div>
         <div><i style="background:var(--accent)"></i><p class="acc">고정 배당</p><b class="acc">3억 6,000만</b></div>
-        <div><i style="background:var(--accent-2)"></i><p class="acc">추가 배당</p><b class="acc">4억 4,446만</b></div>
+        <div><i style="background:var(--accent-2)"></i><p class="acc">추가 배당</p><b class="acc">2억 4,000만</b></div>
       </div>
       <div class="sum" style="margin-top:32px">
         <div class="box"><p class="k">1구좌 고정 배당 (1차)</p><p class="v">연 3,600만원</p><p class="d">매달 300만원 · 18% (2차 16%)</p></div>
         <p class="op">+</p>
-        <div class="box"><p class="k">1구좌 추가 배당</p><p class="v">약 4,440만원</p><p class="d">다음 해 1분기 · 1차 · 2차 동일</p></div>
+        <div class="box"><p class="k">1구좌 추가 배당</p><p class="v">약 2,400만원</p><p class="d">다음 해 1분기</p></div>
         <p class="op">=</p>
-        <div class="box total"><p class="k">1차 1구좌 연간 배당 (예상)</p><p class="v">약 8,040만원</p><p class="d">투자금 2억원 대비 40.2%</p></div>
+        <div class="box total"><p class="k">1차 1구좌 연간 배당 (예상)</p><p class="v">약 6,000만원</p><p class="d">투자금 2억원 대비 30%</p></div>
       </div>
-      <p class="note">매출: 4개 지점 평당 정산 매출(OTA 수수료 차감 후) 기준 · 가동률 80% 가정(성수기 90%보다 낮춰 비수기 감안) · 운영 수수료 15% · 운영비(청소 · 린넨 · 소모품 · 공과금 등) 매출의 20% 가정 · 임대료는 관리비 포함 · 추가 배당은 전 구좌 1차 기준(2차가 있으면 늘어남) · 법인세 반영 전 · 모든 수익은 예상치이며 추가 배당은 전년도 결산으로 확정</p>
+      <p class="note">매출: 4개 지점 평당 정산 매출(OTA 수수료 차감 후) · 가동률 연중 80% 가정(성수기 90%보다 낮춤) · 운영 수수료 15% · 임대료 관리비 포함 · 운영비(공과금 · 린넨/비품 렌탈 · 소모품 · 청소 용역) 월 약 5,000만원, 매출의 약 30% 가정 · 추가 배당은 전 구좌 1차 기준 · 법인세 반영 전 · 모든 수익은 예상치이며 추가 배당은 전년도 결산으로 확정</p>
     </div>
   </section>
 
@@ -434,41 +524,41 @@ footer p + p { margin-top: 6px; }
       <div class="plan" id="plan-r1" role="tabpanel" aria-labelledby="tab-r1">
         <h3 class="plan-title">1차 — 매달 300만원, 1분기 추가 배당, 그리고 엑시트</h3>
         <div class="cal-scroll">
-          <div class="cal" role="img" aria-label="1차 배당 달력: 2027년 4월부터 2031년 5월까지 매달 300만원, 2029~2031년 1분기 추가 배당 약 4,440만원, 2031년 5월 엑시트">
+          <div class="cal" role="img" aria-label="1차 배당 달력: 2027년 5월부터 2031년 5월까지 매달 300만원, 2029~2031년 1분기 추가 배당 약 2,400만원, 2031년 5월 엑시트(예상)">
 <span class="yl h">연도</span><span class="m">1월</span><span class="m">2월</span><span class="m">3월</span><span class="m">4월</span><span class="m">5월</span><span class="m">6월</span><span class="m">7월</span><span class="m">8월</span><span class="m">9월</span><span class="m">10월</span><span class="m">11월</span><span class="m">12월</span><span class="m">1분기 추가</span><span class="tot h">연간</span>
-<span class="yl">2027</span><span class="c prep">오픈 준비</span><span class="c open">오픈</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="ex none">—</span><span class="tot">2,700만원</span>
+<span class="yl">2027</span><span class="c prep">오픈 준비</span><span class="c open" style="grid-column:span 2">3월 오픈</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="ex none">—</span><span class="tot">2,400만원</span>
 <span class="yl">2028</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="ex">+α</span><span class="tot">3,600만원 <em>+α</em></span>
-<span class="yl">2029</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="ex">+4,440만</span><span class="tot">8,040만원</span>
-<span class="yl">2030</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="ex">+4,440만</span><span class="tot">8,040만원</span>
-<span class="yl">2031</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c exit">5월 엑시트 → 1구좌 2억원 · 세금 11% 빼고 1억 7,800만원</span><span class="ex">+4,440만</span><span class="tot">5,940만원</span>
+<span class="yl">2029</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="ex">+2,400만</span><span class="tot">6,000만원</span>
+<span class="yl">2030</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="ex">+2,400만</span><span class="tot">6,000만원</span>
+<span class="yl">2031</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c pay">300만</span><span class="c exit">5월 엑시트(예상) → 1구좌 2억원 · 세금 11% 빼고 1억 7,800만원</span><span class="ex">+2,400만</span><span class="tot">3,900만원</span>
           </div>
         </div>
         <p class="hint">달력은 옆으로 밀어 볼 수 있습니다</p>
         <div class="trio quad">
-        <div><p class="k">고정 배당</p><p class="big">1억 5,000만원</p><p class="d">50개월 × 300만원 · 세금 0원</p></div>
-        <div><p class="k">추가 배당 (예상)</p><p class="big">약 1억 3,330만원</p><p class="d">2029~2031년 1분기 · 세금 0원</p></div>
-        <div><p class="k">엑시트 실수령</p><p class="big">1억 7,800만원</p><p class="d">2031년 5월 · 2억에서 11% 차감</p></div>
-        <div><p class="k acc">1구좌 합계 (예상)</p><p class="big">약 4억 6,130만원</p><p class="d">원금 2억원의 약 2.3배</p></div>
+        <div><p class="k">고정 배당</p><p class="big">1억 4,700만원</p><p class="d">49개월 × 300만원 · 세금 0원</p></div>
+        <div><p class="k">추가 배당 (예상)</p><p class="big">약 7,200만원</p><p class="d">2029~2031년 1분기 · 세금 0원</p></div>
+        <div><p class="k">엑시트 실수령</p><p class="big">1억 7,800만원</p><p class="d">2031년 5월(예상) · 2억에서 11% 차감</p></div>
+        <div><p class="k acc">1구좌 합계 (예상)</p><p class="big">약 3억 9,700만원</p><p class="d">원금 2억원의 약 2배</p></div>
       </div>
       </div>
       <div class="plan" id="plan-r2" role="tabpanel" aria-labelledby="tab-r2">
         <h3 class="plan-title">2차 — 매달 약 267만원, 1분기 추가 배당, 그리고 엑시트</h3>
         <div class="cal-scroll">
-          <div class="cal" role="img" aria-label="2차 배당 달력: 2027년 4월부터 2031년 5월까지 매달 약 267만원, 2029~2031년 1분기 추가 배당 약 4,440만원, 2031년 5월 엑시트">
+          <div class="cal" role="img" aria-label="2차 배당 달력: 2027년 5월부터 2031년 5월까지 매달 약 267만원, 2029~2031년 1분기 추가 배당 약 2,400만원, 2031년 5월 엑시트(예상)">
 <span class="yl h">연도</span><span class="m">1월</span><span class="m">2월</span><span class="m">3월</span><span class="m">4월</span><span class="m">5월</span><span class="m">6월</span><span class="m">7월</span><span class="m">8월</span><span class="m">9월</span><span class="m">10월</span><span class="m">11월</span><span class="m">12월</span><span class="m">1분기 추가</span><span class="tot h">연간</span>
-<span class="yl">2027</span><span class="c prep">오픈 준비</span><span class="c open">오픈</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="ex none">—</span><span class="tot">2,400만원</span>
+<span class="yl">2027</span><span class="c prep">오픈 준비</span><span class="c open" style="grid-column:span 2">3월 오픈</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="ex none">—</span><span class="tot">2,133만원</span>
 <span class="yl">2028</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="ex">+α</span><span class="tot">3,200만원 <em>+α</em></span>
-<span class="yl">2029</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="ex">+4,440만</span><span class="tot">7,640만원</span>
-<span class="yl">2030</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="ex">+4,440만</span><span class="tot">7,640만원</span>
-<span class="yl">2031</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c exit">5월 엑시트 → 1구좌 2억원 · 세금 11% 빼고 1억 7,800만원</span><span class="ex">+4,440만</span><span class="tot">5,773만원</span>
+<span class="yl">2029</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="ex">+2,400만</span><span class="tot">5,600만원</span>
+<span class="yl">2030</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="ex">+2,400만</span><span class="tot">5,600만원</span>
+<span class="yl">2031</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c pay">267만</span><span class="c exit">5월 엑시트(예상) → 1구좌 2억원 · 세금 11% 빼고 1억 7,800만원</span><span class="ex">+2,400만</span><span class="tot">3,733만원</span>
           </div>
         </div>
         <p class="hint">달력은 옆으로 밀어 볼 수 있습니다</p>
         <div class="trio quad">
-        <div><p class="k">고정 배당</p><p class="big">1억 3,333만원</p><p class="d">50개월 × 266만 6,667원 · 세금 0원</p></div>
-        <div><p class="k">추가 배당 (예상)</p><p class="big">약 1억 3,330만원</p><p class="d">1차와 같은 금액 · 세금 0원</p></div>
-        <div><p class="k">엑시트 실수령</p><p class="big">1억 7,800만원</p><p class="d">2031년 5월 · 2억에서 11% 차감</p></div>
-        <div><p class="k acc">1구좌 합계 (예상)</p><p class="big">약 4억 4,460만원</p><p class="d">원금 2억원의 약 2.2배</p></div>
+        <div><p class="k">고정 배당</p><p class="big">1억 3,067만원</p><p class="d">49개월 × 266만 6,667원 · 세금 0원</p></div>
+        <div><p class="k">추가 배당 (예상)</p><p class="big">약 7,200만원</p><p class="d">2029~2031년 1분기 · 세금 0원</p></div>
+        <div><p class="k">엑시트 실수령</p><p class="big">1억 7,800만원</p><p class="d">2031년 5월(예상) · 2억에서 11% 차감</p></div>
+        <div><p class="k acc">1구좌 합계 (예상)</p><p class="big">약 3억 8,070만원</p><p class="d">원금 2억원의 약 1.9배</p></div>
       </div>
       </div>
     </div>
@@ -476,7 +566,7 @@ footer p + p { margin-top: 6px; }
 
   <section class="block" id="exit">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">exit · 2031년 5월 · 1구좌 2억원 기준 · 1차 · 2차 동일</p><hr><h2>엑시트 20억원 — 1구좌 실수령 1억 7,800만원</h2></div>
+      <div class="head"><p class="eyebrow">exit · 2031년 5월 예상 시나리오 · 1구좌 2억원 기준</p><hr><h2>엑시트 20억원 — 1구좌 실수령 1억 7,800만원</h2></div>
       <div class="flow">
         <div class="box"><p class="k">엑시트 금액</p><p class="v">20억원</p><p class="d">보증금 3.5억 + 권리금 16.5억</p></div>
         <p class="op">÷10</p>
@@ -489,50 +579,53 @@ footer p + p { margin-top: 6px; }
       <p class="subtle" style="margin-top:16px">소액주주는 감액배당에 세금이 없어 배당은 원금을 넘어도 비과세입니다. 엑시트 양도세는 차익의 11%로, 여기서는 2억 전체에 적용해 보수적으로 계산했습니다.</p>
       <h3 style="margin-top:40px">1차 1구좌로 받는 돈 합계 (예상)</h3>
       <div class="total-row">
-        <div class="stack" role="img" aria-label="1구좌 합계 약 4억 6,130만원: 고정 배당 1억 5,000만원, 추가 배당 약 1억 3,330만원, 엑시트 실수령 1억 7,800만원. 원금 2억원은 배당만으로 넘습니다.">
-          <span style="flex:1500;background:var(--accent)"></span><span style="flex:1333;background:var(--accent-2)"></span><span style="flex:1780;background:var(--ink)"></span>
-          <em class="line" style="left:43.36%"></em>
+        <div class="stack" role="img" aria-label="1구좌 합계 약 3억 9,700만원: 고정 배당 1억 4,700만원, 추가 배당 약 7,200만원, 엑시트 실수령 1억 7,800만원. 원금 2억원은 배당만으로 넘습니다.">
+          <span style="flex:14700;background:var(--accent)"></span><span style="flex:7200;background:var(--accent-2)"></span><span style="flex:17800;background:var(--ink)"></span>
+          <em class="line" style="left:50.38%"></em>
         </div>
-        <div class="tot-label"><p class="big">약 4억 6,130만원</p><p class="subtle">원금 2억원의 약 2.3배</p></div>
+        <div class="tot-label"><p class="big">약 3억 9,700만원</p><p class="subtle">원금 2억원의 약 2배</p></div>
       </div>
       <div class="legend three">
-        <div><i style="background:var(--accent)"></i><p>고정 배당</p><b>1억 5,000만</b></div>
-        <div><i style="background:var(--accent-2)"></i><p>추가 배당 (예상)</p><b>약 1억 3,330만</b></div>
+        <div><i style="background:var(--accent)"></i><p>고정 배당</p><b>1억 4,700만</b></div>
+        <div><i style="background:var(--accent-2)"></i><p>추가 배당 (예상)</p><b>약 7,200만</b></div>
         <div><i style="background:var(--ink)"></i><p>엑시트 실수령</p><b>1억 7,800만</b></div>
       </div>
       <p class="small-note" style="margin-top:10px">흰 점선 = 원금 2억원 · 배당만으로 원금을 넘습니다</p>
-      <p class="note">추가 배당: 2028~2030년분 예상치(1구좌 연 약 4,440만원) 3회 · 오픈 첫해(2027년)분 +α 별도 · 모든 수익은 예상치이며 엑시트 금액은 예정입니다 · 감액배당: 2026년 개정 세법에서도 중소 · 중견기업 비상장 소액주주는 비과세 · 11%: 중소기업 소액주주 양도소득세 10% + 지방소득세 1%</p>
+      <p class="note">추가 배당: 2028~2030년분 예상치(1구좌 연 약 2,400만원) 3회 · 2027년분 +α 별도 · 엑시트는 예상 시나리오, 시설권리금은 시장 상황에 따라 달라질 수 있습니다 · 감액배당: 2026년 개정 세법에서도 중소 · 중견기업 비상장 소액주주는 비과세 · 11%: 중소기업 소액주주 양도소득세 10% + 지방소득세 1%</p>
     </div>
   </section>
 
   <section class="block" id="tax">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">tax</p><hr><h2>배당은 세금 0원, 투자한 해에는 소득공제까지</h2></div>
+      <div class="head"><p class="eyebrow">tax</p><hr><h2>배당은 세금 0원, 소득공제는 1구좌 8,900만원까지</h2></div>
       <div class="tax-grid">
         <div>
-          <h3>1차 1구좌 배당 2억 8,330만원(고정 + 추가, 예상)에 붙는 세금</h3>
+          <h3>1차 1구좌 배당 2억 1,900만원(고정 + 추가, 예상)에 붙는 세금</h3>
           <div class="vs">
             <div><p class="lab acc">이 투자 — 감액배당 · 소액주주</p><div class="row"><span class="tick"></span><span class="amt0">0원</span></div></div>
-            <div><p class="lab subtle">이익배당이라면 (15.4% 원천징수부터)</p><div class="row"><span class="barv" style="width:min(14%, 92px)"></span><span class="amt1">4,363만원~</span></div></div>
-            <div><p class="lab subtle">직접 창업해 운영하면 (종합소득세 최고 49.5%)</p><div class="row"><span class="barv" style="width:min(46%, 300px)"></span><span class="amt1">1억 4,025만원</span></div></div>
+            <div><p class="lab subtle">이익배당이라면 (15.4% 원천징수부터)</p><div class="row"><span class="barv" style="width:min(14%, 92px)"></span><span class="amt1">3,373만원~</span></div></div>
+            <div><p class="lab subtle">직접 창업해 운영하면 (종합소득세 최고 49.5%)</p><div class="row"><span class="barv" style="width:min(46%, 300px)"></span><span class="amt1">1억 840만원</span></div></div>
           </div>
           <p style="margin-top:22px;border-top:1px solid var(--line);padding-top:16px">엑시트 때는 양도차익의 <b class="acc">11%</b>만 냅니다 (중소기업 소액주주)</p>
         </div>
         <div>
-          <p class="subtle">1구좌 투자한 해 소득공제</p>
+          <p class="subtle">1구좌 소득공제 — 투자한 해 · 2년차 · 3년차 중 한 해를 골라서</p>
           <p class="big" style="font-size:clamp(40px,6vw,64px)">8,900만원</p>
-          <p class="subtle" style="font-size:14px">3천만원까지 100% · 3천~5천만원 70% · 5천만원 초과 30%</p>
+          <p class="subtle" style="font-size:14px">3천만원까지 100% · 3천~5천만원 70% · 5천만원 초과 30% · 소득의 50% 한도</p>
           <div class="tbl" style="margin-top:14px">
             <table>
-              <tr><th>내 세율 구간</th><th>줄어드는 세금</th></tr>
-              <tr><td>38%</td><td class="acc">약 3,720만원</td></tr>
-              <tr><td>40%</td><td class="acc">약 3,920만원</td></tr>
-              <tr><td>45%</td><td class="acc">약 4,410만원</td></tr>
+              <tr><th>연 소득 (세율)</th><th>공제</th><th>줄어드는 세금</th></tr>
+              <tr><td>6,000만원 <span class="subtle">(24%)</span></td><td>3,000만원</td><td class="acc">약 590만원</td></tr>
+              <tr><td>1억원 <span class="subtle">(35%)</span></td><td>5,000만원</td><td class="acc">약 1,470만원</td></tr>
+              <tr><td>1.5억원 <span class="subtle">(35%)</span></td><td>7,500만원</td><td class="acc">약 2,730만원</td></tr>
+              <tr><td>2억원 <span class="subtle">(38%)</span></td><td>8,900만원</td><td class="acc">약 3,590만원</td></tr>
+              <tr><td>3억원 <span class="subtle">(38%)</span></td><td>8,900만원</td><td class="acc">약 3,720만원</td></tr>
+              <tr><td>10억원 초과 <span class="subtle">(45%)</span></td><td>8,900만원</td><td class="acc">약 4,410만원</td></tr>
             </table>
           </div>
         </div>
       </div>
-      <p class="note">감액배당: 2026년 개정 세법에서도 중소 · 중견기업 비상장 소액주주는 비과세 · 이익배당은 금융소득 연 2,000만원 초과 시 종합과세 · 직접 운영은 최고세율 49.5%(지방세 포함) 단순 적용<br>소득공제: 조세특례제한법 제16조(벤처기업 투자, 2028년 말 투자분까지) · 종합소득금액 50% 한도 · 3년 이상 보유 · 줄어드는 세금은 지방세 포함 추정치</p>
+      <p class="note">감액배당: 2026년 개정 세법에서도 중소 · 중견기업 비상장 소액주주는 비과세 · 이익배당은 금융소득 연 2,000만원 초과 시 종합과세 · 직접 운영은 최고세율 49.5%(지방세 포함) 단순 적용<br>소득공제: 조세특례제한법 제16조(벤처기업 투자, 2028년 말 투자분까지) · 3년 이상 보유 · 연 소득 = 종합소득금액(다른 공제 없다고 가정) · 줄어드는 세금은 지방세 포함 추정치</p>
     </div>
   </section>
 
@@ -543,11 +636,12 @@ footer p + p { margin-top: 6px; }
         <table class="cmp">
           <tr><th></th><th>주식</th><th class="us">이 투자</th></tr>
           <tr><td>돈이 들어오는 방식</td><td>주로 시세차익 · 배당은 연 1~4회</td><td class="us">매달 300만원 + 매년 1분기 추가 배당</td></tr>
-          <tr><td>가격</td><td>매일 시세가 오르내림</td><td class="us">시세 없음 · 매년 초 지난해 실적 보고</td></tr>
+          <tr><td>가격</td><td>매일 시세가 오르내림</td><td class="us">시세 없음</td></tr>
+          <tr><td>현황 확인</td><td>분기 · 반기 공시</td><td class="us">OTA 결제 · 판매 현황 실시간 · 매년 초 실적 보고</td></tr>
           <tr><td>배당 세금</td><td>15.4% · 연 2,000만원 넘으면 종합과세</td><td class="us">0원 (감액배당 · 소액주주)</td></tr>
-          <tr><td>투자한 해 소득공제</td><td>없음</td><td class="us">1구좌 8,900만원</td></tr>
+          <tr><td>소득공제</td><td>없음</td><td class="us">1구좌 8,900만원 (투자한 해 또는 2 · 3년차)</td></tr>
           <tr><td>무엇에 투자하나</td><td>회사 전체의 실적</td><td class="us">선릉역 가족호텔 한 곳 · 보증금 3.5억 포함</td></tr>
-          <tr><td>팔 때</td><td>시장에서 바로</td><td class="us">지분 양도(3자 간 거래) · 2031년 5월 엑시트</td></tr>
+          <tr><td>팔 때</td><td>시장에서 바로</td><td class="us">지분 양도(3자 간 거래) · 2031년 5월 엑시트(예상 시나리오)</td></tr>
         </table>
       </div>
       <p class="note">주식은 상장주식 일반 기준 · 이 투자의 배당과 엑시트 금액은 예상치이며 실적에 따라 달라질 수 있습니다</p>
@@ -558,26 +652,31 @@ footer p + p { margin-top: 6px; }
     <div class="wrap">
       <div class="head"><p class="eyebrow">q&amp;a</p><hr><h2>자주 묻는 질문</h2></div>
 <h3 class="qa-group">모집과 배당</h3>
-<details class="qa"><summary>1구좌는 얼마인가요?</summary><p>1구좌 2억원, 총 10구좌(20억원)입니다. 1차 · 2차 모두 같은 가격 · 같은 지분입니다.</p></details>
-<details class="qa"><summary>모집은 언제까지인가요?</summary><p>1차는 10월 8일(목), 2차는 10월 22일(목) 마감입니다. 고정 배당은 1차 연 18%, 2차 연 16%입니다.</p></details>
-<details class="qa"><summary>배당은 언제부터 받나요?</summary><p>2027년 3월 오픈 후 2개월차인 4월부터 매월 받습니다.</p></details>
-<details class="qa"><summary>배당은 고정인가요?</summary><p>네. 1차는 연 18%(1구좌 월 300만원), 2차는 연 16%(월 약 267만원)를 매월 같은 금액으로 드립니다.</p></details>
-<details class="qa"><summary>고정 배당보다 더 벌면요?</summary><p>고정 배당을 넘는 전년도 수익은 다음 해 1분기에 추가 배당합니다. 1차 · 2차 같은 금액이며, 예상 기준 1구좌 연 약 4,440만원입니다.</p></details>
-<details class="qa"><summary>오픈이 늦어지면요?</summary><p>배당은 오픈 2개월차부터 시작합니다. 오픈이 늦어지면 배당 시작도 함께 늦어집니다.</p></details>
-<h3 class="qa-group">운영 · 세금 · 회수</h3>
+<details class="qa"><summary>1구좌는 얼마인가요?</summary><p>1구좌 2억원, 총 10구좌(20억원)입니다.</p></details>
+<details class="qa"><summary>모집은 언제까지인가요?</summary><p>1차는 10월 8일(목), 2차는 10월 22일(목) 마감입니다. 10구좌 한정이라 1차에서 모두 차면 2차 모집은 하지 않습니다.</p></details>
+<details class="qa"><summary>1차와 2차는 무엇이 다른가요?</summary><p>고정 배당만 다릅니다. 1차는 연 18%(1구좌 월 300만원), 2차는 연 16%(월 약 267만원)입니다. 배당 기간 49개월(예상 시나리오) 동안 1구좌 기준 약 1,633만원 차이가 납니다.</p></details>
+<details class="qa"><summary>배당은 언제부터 받나요?</summary><p>2027년 3월 오픈, 2개월차인 5월부터 매월 같은 금액을 받을 예정입니다.</p></details>
+<details class="qa"><summary>고정 배당보다 더 벌면요?</summary><p>고정 배당을 넘는 전년도 수익은 다음 해 1분기에 추가 배당합니다. 예상 기준 1구좌 연 약 2,400만원으로, 1차는 고정 배당과 합쳐 연 약 6,000만원(투자금 대비 약 30% 수익률)입니다.</p></details>
+<details class="qa"><summary>오픈이 늦어지면요?</summary><p>배당은 오픈 2개월차부터라, 오픈이 늦어지면 배당 시작도 그만큼 늦어집니다.</p></details>
+<h3 class="qa-group">사업과 운영</h3>
 <details class="qa"><summary>투자금은 어디에 쓰이나요?</summary><p>임차보증금 3.5억원과 공사비 16.5억원, 모두 이 호텔에 쓰입니다.</p></details>
-<details class="qa"><summary>누가 운영하나요?</summary><p>먼슬리브를 운영하는 고수플러스가 위탁 운영합니다. 수수료는 매출의 15%입니다.</p></details>
-<details class="qa"><summary>어떤 형태로 참여하나요?</summary><p>프로젝트 법인(SPC) 먼슬리브 역삼 호텔스테이의 주주가 됩니다.</p></details>
-<details class="qa"><summary>배당에도 세금이 있나요?</summary><p>감액배당이라 소액주주는 배당 세금이 없습니다. 엑시트 때 양도차익의 11%만 냅니다.</p></details>
-<details class="qa"><summary>소득공제는 얼마나 되나요?</summary><p>1구좌 기준 8,900만원을 투자한 해 종합소득에서 뺍니다. 3년 이상 보유가 조건입니다.</p></details>
-<details class="qa"><summary>원금은 어떻게 돌려받나요?</summary><p>엑시트 때 20억원(보증금 3.5억 + 시설권리금 16.5억)을 나눠 1구좌 2억원을 받습니다.</p></details>
-<h3 class="qa-group">계약과 참여</h3>
+<details class="qa"><summary>객실은 몇 실인가요?</summary><p>36실 예정입니다(6개 층 × 6실, 객실당 20㎡ 이상). 1개 층은 공용 라운지로 씁니다. 설계 · 인허가 과정에서 객실 수는 달라질 수 있습니다.</p></details>
+<details class="qa"><summary>누가 운영하나요?</summary><p>먼슬리브를 운영하는 고수플러스가 위탁 운영합니다. 운영 수수료는 매출의 15%입니다.</p></details>
+<details class="qa"><summary>예상 수익은 어떻게 계산했나요?</summary><p>먼슬리브 4개 지점 실적(OTA 수수료를 뺀 정산 매출)을 평당으로 환산해 연 매출 약 19.7억원으로 잡았습니다. 가동률은 연중 80%(성수기 90%)입니다. 비용은 운영 수수료 15%, 임대료 월 3,990만원, 운영비 월 약 5,000만원(공과금 · 렌탈 · 소모품 · 청소 등, 매출의 약 30%)입니다.</p></details>
+<details class="qa"><summary>운영 현황은 어떻게 알 수 있나요?</summary><p>OTA에서 결제 · 판매되는 현황을 실시간으로 볼 수 있습니다. 매년 초에는 지난해 실적을 보고드립니다.</p></details>
 <details class="qa"><summary>임대차 계약은 몇 년인가요?</summary><p>5년 계약에 렌트프리 3개월입니다.</p></details>
-<details class="qa"><summary>운영 실적은 어떻게 알 수 있나요?</summary><p>매년 초에 지난해 실적을 보고드립니다.</p></details>
+<h3 class="qa-group">세금과 회수</h3>
+<details class="qa"><summary>어떤 형태로 참여하나요?</summary><p>프로젝트 법인(SPC) 먼슬리브 역삼 호텔스테이의 주주가 됩니다.</p></details>
+<details class="qa"><summary>매월 배당에도 세금이 있나요?</summary><p>감액배당이라 소액주주는 배당 세금이 없습니다. 엑시트 때 양도차익의 11%만 냅니다.</p></details>
+<details class="qa"><summary>소득공제는 얼마나 되나요?</summary><p>1구좌 기준 8,900만원을 종합소득에서 뺍니다. 투자한 해, 2년차, 3년차 중 한 해를 골라 받을 수 있고, 그해 종합소득금액의 최대 50%까지 공제됩니다. 3년 이상 보유가 조건입니다.</p></details>
+<details class="qa"><summary>엑시트는 언제, 얼마로 보나요?</summary><p>예상 시나리오는 2031년 5월 엑시트입니다. 보증금 3.5억원과 시설권리금 16.5억원을 합쳐 20억원으로 봅니다.</p></details>
+<details class="qa"><summary>원금은 어떻게 돌려받나요?</summary><p>엑시트 때 1구좌 2억원을 받습니다. 이 중 시설권리금 몫은 많아질 수도, 적어질 수도 있습니다. 세금 11%를 빼도 1억 7,800만원입니다.</p></details>
 <details class="qa"><summary>중간에 지분을 넘길 수 있나요?</summary><p>언제든 가능합니다. 지분을 넘기는 3자 간 거래로 진행합니다.</p></details>
-<details class="qa"><summary>엑시트 금액은 얼마로 보나요?</summary><p>보증금 3.5억원과 시설권리금 16.5억원을 합쳐 20억원으로 봅니다.</p></details>
+<h3 class="qa-group">참여와 계약</h3>
 <details class="qa"><summary>법인도 참여할 수 있나요?</summary><p>네, 법인으로도 투자할 수 있습니다. 배당 비과세와 소득공제는 개인 투자자 기준입니다.</p></details>
-<details class="qa"><summary>참여하려면 어떻게 하나요?</summary><p>신청 → 상담 → 참여 시 계약서 작성 → 투자금 한 번에 납입 순서입니다. 아래에서 상담을 신청하세요.</p></details>
+<details class="qa"><summary>참여하려면 어떻게 하나요?</summary><p>신청 → 상담 → 참여 시 계약서 작성 → 투자금 한 번에 납입 순서입니다.</p></details>
+<details class="qa"><summary>최대 몇 구좌까지 가능한가요?</summary><p>9구좌까지 가능합니다. 5구좌 이상일 경우 소액주주 기준을 넘을 수 있습니다.</p></details>
+<details class="qa"><summary>별도의 계약서를 작성하나요?</summary><p>네, 투자계약서와 주주간계약서, 총 2종류를 작성합니다.</p></details>
     </div>
   </section>
 
@@ -587,6 +686,7 @@ footer p + p { margin-top: 6px; }
       <div class="apply">
         <div class="contact">
           <p>이름과 연락처를 남겨 주시면 담당자가 직접 연락드립니다.</p>
+          <p class="urge" style="margin-top:0"><b>1차 마감 10월 8일(목)</b> · 연 18% · 10구좌 한정</p>
           <p class="subtle">담당 김두수 부대표</p>
           <p class="num">010-9524-0830</p>
           <div class="actions">
@@ -697,6 +797,14 @@ footer p + p { margin-top: 6px; }
   }
   tabs.forEach(function (tb, k) { tb.addEventListener('click', function () { show(k); }); });
   show(0);
+  var dd = document.getElementById('dday');
+  if (dd) {
+    var now = new Date(), kst = new Date(now.getTime() + (now.getTimezoneOffset() + 540) * 60000);
+    var today = Date.UTC(kst.getFullYear(), kst.getMonth(), kst.getDate());
+    var left = Math.round((Date.UTC(2026, 9, 8) - today) / 86400000);
+    if (left > 0) dd.textContent = ' · D-' + left;
+    else if (left === 0) dd.textContent = ' · 오늘 마감';
+  }
   document.getElementById('copy-number').addEventListener('click', function () {
     copyText('010-9524-0830', document.querySelector('.contact .num'), document.getElementById('copy-number-note'), '번호를 복사했습니다.');
   });
