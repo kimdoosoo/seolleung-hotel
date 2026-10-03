@@ -253,6 +253,9 @@ footer p + p { margin-top: 6px; }
   footer { padding-bottom: 96px; }
 }
 /* 1차 vs 2차 */
+.deadlines { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.deadlines .deadline { margin-top: 0; }
+.deadline.second { border-color: var(--line); color: var(--sub); }
 .urge { margin-top: 18px; font-size: 16px; color: var(--sub); }
 .urge b { color: var(--accent); }
 .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
@@ -286,6 +289,25 @@ footer p + p { margin-top: 6px; }
 @media (max-width: 760px) {
   .duo, .care { grid-template-columns: minmax(0, 1fr); }
 }
+/* 추가 보너스: 소득공제 */
+.bonus { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr); gap: 40px; align-items: start; }
+.facts { display: flex; flex-direction: column; gap: 20px; }
+.facts > div { border-top: 2px solid var(--ink); padding-top: 14px; display: flex; flex-direction: column; gap: 4px; }
+.facts .k { font-size: 14px; color: var(--sub); }
+.facts .v { font-size: clamp(32px, 4.6vw, 48px); font-weight: 800; line-height: 1.1; }
+.facts .v2 { font-size: 18px; font-weight: 700; }
+.facts .d { font-size: 13.5px; color: var(--sub); }
+.saves .hd { display: flex; justify-content: space-between; font-size: 13px; color: var(--sub); padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+.saves .row { display: grid; grid-template-columns: 8.5em minmax(0, 1fr) auto; grid-template-areas: "lab bar val"; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.saves .lab { grid-area: lab; font-size: 15px; }
+.saves .lab span { color: var(--faint); }
+.saves .bar-wrap { grid-area: bar; }
+.saves .bar { display: block; height: 22px; background: var(--accent); border-radius: 3px; }
+.saves .val { grid-area: val; font-size: clamp(20px, 2.6vw, 28px); font-weight: 800; color: var(--accent); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (max-width: 760px) {
+  .bonus { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .saves .row { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "lab val" "bar bar"; row-gap: 8px; }
+}
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 </style>
 </head>
@@ -302,14 +324,14 @@ footer p + p { margin-top: 6px; }
     <p class="eyebrow">seolleung family hotel · co-investment</p>
     <h1>선릉역 가족호텔<br>공동투자 안내</h1>
     <p class="addr">서울 강남구 선릉로89길 13 · 지상 2~8층 · 객실 36실 예정 · 2027년 3월 오픈 예정</p>
-    <p class="deadline">1차 모집 마감 <b>2026년 10월 8일(목)</b><span id="dday"></span></p>
+    <div class="deadlines"><p class="deadline">1차 모집 마감 <b>2026년 10월 8일(목)</b><span id="dday"></span></p><p class="deadline second">2차 모집 <b>10월 9일(금) ~ 10월 22일(목)</b></p></div>
     <div class="stats">
       <div class="stat"><p class="k">1구좌</p><p class="v">2억원</p></div>
       <div class="stat"><p class="k">모집</p><p class="v">10구좌</p></div>
       <div class="stat"><p class="k">1차 배당</p><p class="v">연 18% 고정</p></div>
       <div class="stat"><p class="k">1차 1구좌 월 배당</p><p class="v">300만원</p></div>
     </div>
-    <p class="urge"><b>10월 8일(목) 1차 마감</b> 뒤에는 고정 배당이 연 16%로 내려갑니다 · 10구좌 한정</p>
+    <p class="subtle" style="margin-top:14px">2차 모집은 10월 22일(목) 마감 · 연 16% 고정(1구좌 월 약 267만원)</p>
     <div class="cta">
       <a class="btn" href="#apply">상담 신청하기</a>
       <a class="btn ghost" href="#first">1차와 2차 차이</a>
@@ -428,7 +450,7 @@ footer p + p { margin-top: 6px; }
         <div class="seg"><p class="mid">12월 전 마감</p><p>겨울방학 학원가 도보권 원룸</p></div>
         <div class="seg"><p class="mid">1박 30만원+</p><p>학기 중 주말 원정 · 부모 동반 호텔</p></div>
       </div>
-      <p class="insight">→ 엄마와 아이가 몇 달씩 머물 ‘취사 가능한 가족형 객실’이 부족합니다</p>
+      <p class="insight">→ 부모와 아이가 몇 달씩 머물 ‘취사 가능한 가족형 객실’이 부족합니다</p>
       <p class="note">출처: 강남구 발표 · 경향신문(2025.12.25) · 르데스크(2026.07.22, 2024.10.23) · 중앙일보(2026.01.27)</p>
     </div>
   </section>
@@ -597,35 +619,38 @@ footer p + p { margin-top: 6px; }
 
   <section class="block" id="tax">
     <div class="wrap">
-      <div class="head"><p class="eyebrow">tax</p><hr><h2>배당은 세금 0원, 소득공제는 1구좌 8,900만원까지</h2></div>
-      <div class="tax-grid">
-        <div>
-          <h3>1차 1구좌 배당 2억 1,900만원(고정 + 추가, 예상)에 붙는 세금</h3>
-          <div class="vs">
-            <div><p class="lab acc">이 투자 — 감액배당 · 소액주주</p><div class="row"><span class="tick"></span><span class="amt0">0원</span></div></div>
-            <div><p class="lab subtle">이익배당이라면 (15.4% 원천징수부터)</p><div class="row"><span class="barv" style="width:min(14%, 92px)"></span><span class="amt1">3,373만원~</span></div></div>
-            <div><p class="lab subtle">직접 창업해 운영하면 (종합소득세 최고 49.5%)</p><div class="row"><span class="barv" style="width:min(46%, 300px)"></span><span class="amt1">1억 840만원</span></div></div>
-          </div>
-          <p style="margin-top:22px;border-top:1px solid var(--line);padding-top:16px">엑시트 때는 양도차익의 <b class="acc">11%</b>만 냅니다 (중소기업 소액주주)</p>
+      <div class="head"><p class="eyebrow">tax · 배당과 엑시트</p><hr><h2>배당은 세금 0원 — 엑시트 때만 11%</h2></div>
+      <h3>1차 1구좌 배당 2억 1,900만원(고정 + 추가, 예상)에 붙는 세금</h3>
+      <div class="vs">
+        <div><p class="lab acc">이 투자 — 감액배당 · 소액주주</p><div class="row"><span class="tick"></span><span class="amt0">0원</span></div></div>
+        <div><p class="lab subtle">이익배당이라면 (15.4% 원천징수부터)</p><div class="row"><span class="barv" style="width:min(18%, 170px)"></span><span class="amt1">3,373만원~</span></div></div>
+        <div><p class="lab subtle">직접 창업해 운영하면 (종합소득세 최고 49.5%)</p><div class="row"><span class="barv" style="width:min(56%, 540px)"></span><span class="amt1">1억 840만원</span></div></div>
+      </div>
+      <p style="margin-top:22px;border-top:1px solid var(--line);padding-top:16px">엑시트 때는 양도차익의 <b class="acc">11%</b>만 냅니다 (중소기업 소액주주 양도소득세 10% + 지방소득세 1%)</p>
+      <p class="note">감액배당: 중소 · 중견기업 비상장 소액주주는 2026년 개정 세법에서도 비과세 · 이익배당은 금융소득 연 2,000만원 초과 시 종합과세 · 직접 운영은 최고세율 49.5%(지방세 포함) 단순 적용</p>
+    </div>
+  </section>
+
+  <section class="block" id="bonus">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">추가 보너스 · 소득공제</p><hr><h2>소득공제로 세금이 최대 약 4,410만원 줄어듭니다</h2></div>
+      <div class="bonus">
+        <div class="facts">
+          <div><p class="k">1구좌 소득공제</p><p class="v">8,900만원</p><p class="d">3천만원까지 100% · 3천~5천만원 70% · 5천만원 초과 30%</p></div>
+          <div><p class="k">언제 받나</p><p class="v2">투자한 해 · 2년차 · 3년차 중 한 해</p><p class="d">소득이 가장 큰 해를 고르면 더 많이 줄어듭니다</p></div>
+          <div><p class="k">무엇이 좋은가</p><p class="v2 acc">배당 · 엑시트와 별도로 받는 보너스</p></div>
         </div>
-        <div>
-          <p class="subtle">1구좌 소득공제 — 투자한 해 · 2년차 · 3년차 중 한 해를 골라서</p>
-          <p class="big" style="font-size:clamp(40px,6vw,64px)">8,900만원</p>
-          <p class="subtle" style="font-size:14px">3천만원까지 100% · 3천~5천만원 70% · 5천만원 초과 30% · 소득의 50% 한도</p>
-          <div class="tbl" style="margin-top:14px">
-            <table>
-              <tr><th>연 소득 (세율)</th><th>공제</th><th>줄어드는 세금</th></tr>
-              <tr><td>6,000만원 <span class="subtle">(24%)</span></td><td>3,000만원</td><td class="acc">약 590만원</td></tr>
-              <tr><td>1억원 <span class="subtle">(35%)</span></td><td>5,000만원</td><td class="acc">약 1,470만원</td></tr>
-              <tr><td>1.5억원 <span class="subtle">(35%)</span></td><td>7,500만원</td><td class="acc">약 2,730만원</td></tr>
-              <tr><td>2억원 <span class="subtle">(38%)</span></td><td>8,900만원</td><td class="acc">약 3,590만원</td></tr>
-              <tr><td>3억원 <span class="subtle">(38%)</span></td><td>8,900만원</td><td class="acc">약 3,720만원</td></tr>
-              <tr><td>10억원 초과 <span class="subtle">(45%)</span></td><td>8,900만원</td><td class="acc">약 4,410만원</td></tr>
-            </table>
-          </div>
+        <div class="saves" role="table" aria-label="연 소득별 1구좌 소득공제로 줄어드는 세금">
+          <div class="hd"><span>연 소득 (세율)</span><span>줄어드는 세금 (1구좌)</span></div>
+          <div class="row"><p class="lab">6,000만원 <span>24%</span></p><div class="bar-wrap"><span class="bar" style="width:13%"></span></div><p class="val">약 590만원</p></div>
+          <div class="row"><p class="lab">1억원 <span>35%</span></p><div class="bar-wrap"><span class="bar" style="width:33%"></span></div><p class="val">약 1,470만원</p></div>
+          <div class="row"><p class="lab">1.5억원 <span>35%</span></p><div class="bar-wrap"><span class="bar" style="width:62%"></span></div><p class="val">약 2,730만원</p></div>
+          <div class="row"><p class="lab">2억원 <span>38%</span></p><div class="bar-wrap"><span class="bar" style="width:82%"></span></div><p class="val">약 3,590만원</p></div>
+          <div class="row"><p class="lab">3억원 <span>38%</span></p><div class="bar-wrap"><span class="bar" style="width:84%"></span></div><p class="val">약 3,720만원</p></div>
+          <div class="row"><p class="lab">10억원 초과 <span>45%</span></p><div class="bar-wrap"><span class="bar" style="width:100%"></span></div><p class="val">약 4,410만원</p></div>
         </div>
       </div>
-      <p class="note">감액배당: 2026년 개정 세법에서도 중소 · 중견기업 비상장 소액주주는 비과세 · 이익배당은 금융소득 연 2,000만원 초과 시 종합과세 · 직접 운영은 최고세율 49.5%(지방세 포함) 단순 적용<br>소득공제: 조세특례제한법 제16조(벤처기업 투자, 2028년 말 투자분까지) · 3년 이상 보유 · 연 소득 = 종합소득금액(다른 공제 없다고 가정) · 줄어드는 세금은 지방세 포함 추정치</p>
+      <p class="note">소득공제: 조세특례제한법 제16조(벤처기업 투자, 2028년 말 투자분까지) · 그해 종합소득금액의 50% 한도 · 3년 이상 보유 · 연 소득 = 종합소득금액(다른 공제 없다고 가정) · 줄어드는 세금은 지방소득세 포함 추정치</p>
     </div>
   </section>
 
@@ -639,7 +664,7 @@ footer p + p { margin-top: 6px; }
           <tr><td>가격</td><td>매일 시세가 오르내림</td><td class="us">시세 없음</td></tr>
           <tr><td>현황 확인</td><td>분기 · 반기 공시</td><td class="us">OTA 결제 · 판매 현황 실시간 · 매년 초 실적 보고</td></tr>
           <tr><td>배당 세금</td><td>15.4% · 연 2,000만원 넘으면 종합과세</td><td class="us">0원 (감액배당 · 소액주주)</td></tr>
-          <tr><td>소득공제</td><td>없음</td><td class="us">1구좌 8,900만원 (투자한 해 또는 2 · 3년차)</td></tr>
+          <tr><td>소득공제</td><td>없음</td><td class="us">세금 최대 약 4,410만원 감소 (8,900만원 공제)</td></tr>
           <tr><td>무엇에 투자하나</td><td>회사 전체의 실적</td><td class="us">선릉역 가족호텔 한 곳 · 보증금 3.5억 포함</td></tr>
           <tr><td>팔 때</td><td>시장에서 바로</td><td class="us">지분 양도(3자 간 거래) · 2031년 5월 엑시트(예상 시나리오)</td></tr>
         </table>
